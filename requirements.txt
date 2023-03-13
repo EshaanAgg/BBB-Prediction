@@ -1,0 +1,16 @@
+jaxlib
+mordred
+torch_sctter
+pytorch_metric_learning
+torch_sparse
+torch_geometric
+pytorcg_lightning
+jax
+tensorflow
+sklearn
+rdkit
+pandas
+numpy
+os
+torch
+deepchem

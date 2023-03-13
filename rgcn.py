@@ -12,7 +12,6 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import matthews_corrcoef
 from pytorch_metric_learning import losses, distances, reducers
-# from pcgrad import PCGrad
 from tqdm import tqdm
 
 
@@ -42,13 +41,10 @@ class Net(torch.nn.Module):
 
 def model_train(train_idx):
     model.train()
-    # optimizer.zero_grad()
     out, emb = model(data.x, data.edge_index, data.edge_type)
     loss_tri = Loss_triplet(emb[train_idx], data.y[train_idx])
     loss_nll = F.nll_loss(out[train_idx], data.y[train_idx])
     loss_list = [loss_tri, loss_nll]
-    # optimizer.pc_backward(loss_list)
-    # optimizer.step()
 
 
 @torch.no_grad()
@@ -125,8 +121,6 @@ epoch_list = []
 print('Cross-validation progressing...')
 for train_mask, val_mask in tqdm(skf.split(data.x[train_index].cpu(), data.y[train_index].cpu())):
     model = Net(dim1, dim2, dim3, dropout).to(device)
-    # optimizer = PCGrad(torch.optim.Adam(
-    # model.parameters(), lr=lr, weight_decay=weight_decay))
 
     auroc_max = 0
     epoch_count = 0
@@ -163,8 +157,6 @@ print(cv_result)
 
 print('Testing progressing...')
 model = Net(dim1, dim2, dim3, dropout).to(device)
-# optimizer = PCGrad(torch.optim.Adam(
-# model.parameters(), lr=lr, weight_decay=weight_decay))
 
 auroc_val_max = 0
 epoch_count = 0

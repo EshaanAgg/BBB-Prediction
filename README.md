@@ -1,4 +1,4 @@
-# RGCN for predicting BBB Permeability of Drug Molecules
+# BBB Permeability Prediction
 
 ### Running the model
 

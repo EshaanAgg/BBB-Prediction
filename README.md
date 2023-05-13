@@ -2,12 +2,23 @@
 
 ### Running the model
 
+Note: Please ensure you have downloaded all the mentioned datasets (and files in the `.gitignore`) before using these commands.
+
+If you are on Windows, you can run all of these commands individually:
+
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 python drug.py
 python protein.py
 python graph.py
 python train_rgcn_protein.py
+```
+
+If on Linux, you can directly use the provided shell script:
+
+```
+chmod +x ./run.sh
+./run.sh
 ```
 
 ## Datasets used

@@ -12,4 +12,5 @@ rdkit
 pandas
 numpy
 torch
+tensorrt
 deepchem

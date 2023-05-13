@@ -4,10 +4,10 @@
 
 ```
 pip install requirements.txt
-python drug_similarity.py
-python drug_protein_interaction.py
-python graph_drugism.py
-python rgcn_drugism.py
+python drug.py
+python protein.py
+python graph.py
+python train_rgcn_protein.py
 ```
 
 ## Datasets used
